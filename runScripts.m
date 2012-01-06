@@ -1,12 +1,23 @@
 close all
+figure
 % [util0 png0 flow0]= enumDepart(.1, 5.0, 1000, act_util, num_act_util, times);
 [util1 png1 flow1]= stochActivity(.1, 5.0, 1.0, 1000, act_util, num_act_util, times);
-plotActUtil(num_act_util, times, 5.0)
-plotUtilBar(num_act_util, times, 5.0)
-plotPassenger(png0(1:12,:), flow0)
-plotPassenger(png1(1:12,:), flow1(:,2,1))
+plotOptUtil(util1(1:12,:))
+[util1 png1 flow1]= stochActivity(.1, 5.0, 0.9, 1000, act_util, num_act_util, times);
+plotOptUtil(util1(1:12,:))
+[util1 png1 flow1]= stochActivity(.1, 5.0, 0.8, 1000, act_util, num_act_util, times);
+plotOptUtil(util1(1:12,:))
+% [util1 png1 flow1]= stochActivity(.1, 5.0, 0.5, 1000, act_util, num_act_util, times);
+% plotOptUtil(util1(1:12,:))
+% [util1 png1 flow1]= stochActivity(.1, 5.0, 0.1, 1000, act_util, num_act_util, times);
+% plotOptUtil(util1(1:12,:))
+[util1 png1 flow1]= stochActivity(.1, 5.0, 0.0, 1000, act_util, num_act_util, times);
 plotOptUtil(util1(1:12,:))
 
+plotActUtil(num_act_util, times, 5.0)
+% plotUtilBar(num_act_util, times, 5.0)
+% plotPassenger(png0(1:12,:), flow0)
+% plotPassenger(png1(1:12,:), flow1(:,2,1))
 
 % act_util =[
 %    10.0000   20.0000
