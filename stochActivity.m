@@ -1,4 +1,5 @@
 function [num_opt_util num_passengers1 num_flows1] = stochActivity(THE, ALP, DISC, population0, U, num_act_util, T)
+% this is an implementation of the MDP model for departure time choice
 % time 13:00 -- 23:59
 % 1: home, 2:work
 theta = sym(THE);

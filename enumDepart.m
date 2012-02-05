@@ -1,4 +1,5 @@
 function [num_these_util num_passengers0 num_flows0] = enumDepart(THE, ALP, population0, U, num_act_util, T)
+% this function simply enumerate all the possible departure times
 % time 13:00 -- 23:59
 % 1: home, 2:work
 theta = sym(THE);
