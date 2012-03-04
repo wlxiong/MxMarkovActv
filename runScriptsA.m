@@ -1,14 +1,20 @@
 clear
 load mix_inputs
 
-[util0 png0 flow0]= enumDepart(0.1, 5.0, 1000, num_act_util, times);
-% mplot(util0)
+[util1 png1 flow1] = stochActivity(.1, 5.0, 1.0, 1000, num_act_util, times);
+plotOptUtil(util1(1:12,:))
+export_fig('exp_max_util', '-pdf')
+plotPassenger(png1)
+export_fig('traffic_flow1', '-pdf')
+
+[util0 png0 flow0] = enumDepart(0.1, 5.0, 1000, num_act_util, times);
 plotAllUtil(util0)
 export_fig('over_all_util', '-pdf')
 plotActUtil(num_act_util, times)
 export_fig('cumm_util', '-pdf')
 plotPassenger(png0)
-export_fig('traffic_flow', '-pdf')
+export_fig('traffic_flow0', '-pdf')
+
 % act_util =[
 %    10.0000   20.0000
 %    10.0000   20.0000
