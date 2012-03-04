@@ -1,9 +1,12 @@
+clear
+load mix_inputs
+
 [util0 png0 flow0]= enumDepart(0.1, 5.0, 1000, num_act_util, times);
 % mplot(util0)
 plotAllUtil(util0)
 export_fig('over_all_util', '-pdf')
-plotActUtil(num_act_util, times, 5.0)
-export_fig('marginal_util', '-pdf')
+plotActUtil(num_act_util, times)
+export_fig('cumm_util', '-pdf')
 plotPassenger(png0)
 export_fig('traffic_flow', '-pdf')
 % act_util =[
