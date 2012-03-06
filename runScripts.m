@@ -1,23 +1,19 @@
-close all
-figure
-% [util0 png0 flow0]= enumDepart(.1, 5.0, 1000, act_util, num_act_util, times);
-[util1 png1 flow1]= stochActivity(.1, 5.0, 1.0, 1000, act_util, num_act_util, times);
-plotOptUtil(util1(1:12,:))
-[util1 png1 flow1]= stochActivity(.1, 5.0, 0.9, 1000, act_util, num_act_util, times);
-plotOptUtil(util1(1:12,:))
-[util1 png1 flow1]= stochActivity(.1, 5.0, 0.8, 1000, act_util, num_act_util, times);
-plotOptUtil(util1(1:12,:))
-% [util1 png1 flow1]= stochActivity(.1, 5.0, 0.5, 1000, act_util, num_act_util, times);
-% plotOptUtil(util1(1:12,:))
-% [util1 png1 flow1]= stochActivity(.1, 5.0, 0.1, 1000, act_util, num_act_util, times);
-% plotOptUtil(util1(1:12,:))
-[util1 png1 flow1]= stochActivity(.1, 5.0, 0.0, 1000, act_util, num_act_util, times);
-plotOptUtil(util1(1:12,:))
+clear
+load mix_inputs
 
-plotActUtil(num_act_util, times, 5.0)
-% plotUtilBar(num_act_util, times, 5.0)
-% plotPassenger(png0(1:12,:), flow0)
-% plotPassenger(png1(1:12,:), flow1(:,2,1))
+[util1 png1 flow1] = stochActivity(.1, 5.0, 1.0, 1000, num_act_util, times);
+plotOptUtil(util1(1:12,:))
+export_fig('exp_max_util', '-pdf')
+plotPassenger(png1)
+export_fig('traffic_flow1', '-pdf')
+
+[util0 png0 flow0] = enumDepart(0.1, 5.0, 1000, num_act_util, times);
+plotAllUtil(util0)
+export_fig('over_all_util', '-pdf')
+plotActUtil(num_act_util, times)
+export_fig('cumm_util', '-pdf')
+plotPassenger(png0)
+export_fig('traffic_flow0', '-pdf')
 
 % act_util =[
 %    10.0000   20.0000
