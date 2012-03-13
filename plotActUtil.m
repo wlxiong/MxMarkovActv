@@ -23,6 +23,8 @@ set(H2,'LineStyle',':', ...
     'Marker', 'v', ...
     'Color', colors(2,:), ...
     'MarkerFaceColor', colors(2,:));
+set(AX(1),'XColor',colors(1,:))
+set(AX(2),'XColor',colors(2,:))
 
 set(get(AX(1),'Ylabel'),'String','Cummulative utility (Work)')
 set(get(AX(2),'Ylabel'),'String','Cummulative utility (In-Home)')
@@ -43,7 +45,6 @@ ylim(AX(1), [0 150])
 ylim(AX(2), [0 150])
 legend('Work', 'Home', 'Location', 'NorthWest')
 xlabel('Time of the day')
-ylabel('Future Utility')
 
 % ylim([0 max(cumsum(act_util(:)))*1.5])
 

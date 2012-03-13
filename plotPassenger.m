@@ -13,5 +13,5 @@ x2 = genTimes(12, 12+size(png,1)+1);
 xlim([min(x2), max(x2)])
 ylim([0 max(png(:))])
 legend('Home', 'Travel', 'Work', 'Location', 'NorthWest')
-ylabel('Population')
+ylabel('Activity participation by population')
 xlabel('Time of the day')
