@@ -23,13 +23,9 @@ set(H2,'LineStyle',':', ...
     'Marker', 'v', ...
     'Color', colors(2,:), ...
     'MarkerFaceColor', colors(2,:));
-set(AX(1),'XColor',colors(1,:))
-set(AX(2),'XColor',colors(2,:))
 
 set(get(AX(1),'Ylabel'),'String','Cummulative utility (Work)')
 set(get(AX(2),'Ylabel'),'String','Cummulative utility (In-Home)')
-set(AX(1),'XAxisLocation', 'Bottom')
-set(AX(2),'XAxisLocation', 'Top')
 
 pbaspect(AX(1), [2 1 1])
 pbaspect(AX(2), [2 1 1])
@@ -37,8 +33,7 @@ pbaspect(AX(2), [2 1 1])
 datetick(AX(1), 'x','HHPM')
 xt = genTimes(12, 12+size(act_util,1)+1);
 set(AX(1), 'XTick', xt(1:3:13))
-set(AX(2), 'XTick', xt(1:3:13))
-set(AX(2), 'XTickLabel', {'12AM', '9PM', '6PM', '3PM', '12PM'})
+set(AX(2), 'XTick', [])
 set(AX(1), 'YTick', 0:20:150)
 set(AX(2), 'YTick', 0:20:150)
 ylim(AX(1), [0 150])
