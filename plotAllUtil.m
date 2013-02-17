@@ -12,4 +12,4 @@ plot(x, opt_util(:,1),...
 pbaspect([2 1 1])
 datetick('x','HHPM');
 xlabel('Time of the day')
-ylabel('Overall utility')
+ylabel('Overall utility from 1 PM to 12 AM')

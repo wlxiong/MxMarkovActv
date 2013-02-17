@@ -23,4 +23,4 @@ datetick('x','HHPM');
 % xlim([12 25])
 legend('Work', 'Home')
 xlabel('Time of the day')
-ylabel('Expected Maximum Utility')
+ylabel('Expected maximum future utility')
